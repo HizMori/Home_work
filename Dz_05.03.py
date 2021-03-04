@@ -16,3 +16,7 @@ def zd_23(n: int, a: int, z: int, x: int, y: int) -> None:
     print(f"Цифр в числе {n} кратных {z}: {len([i for i in str(n) if int(i) % z == 0])}")
     print(f"Сумма его больших {a}: {len([i for i in str(n) if int(i) > a])}")
     print(f"Цифры {x} и {y} встречаются {str(x).count(str(x)) and str(y).count(str(y))} раз")
+def zd_24(nambers: list, x: int) -> None:
+    numbers = map(int, input("Введите последовательность чисел: ").split(" "))
+    x = int(input("Введите число x: "))
+    print(f"Сумма всех чисел последовательности больше числа {x}: {len([i for i in numbers if i > x])}")
