@@ -15,12 +15,11 @@ def zd_24(nambers: list, x: int) -> None:
     x = int(input("Введите число x: "))
 
     print(f"Сумма всех чисел последовательности больше числа {x}: {sum([i for i in numbers if i > x])}")
-    print(f"Кол-во чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}")
+    print(f"Кол-во всех чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}")
     # numbers = map(int, input("Введите последовательность чисел: ").split(" "))
     # x = int(input("Введите число x: "))
 
     # print(f"Сумма всех чисел последовательности больше числа {x}: {sum([i for i in numbers if i > x])}")
-    # print(f'Количество чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}')
     # print(f"Кол-во чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}")
 
     #a = [1, 2, 3, 4, 5]
