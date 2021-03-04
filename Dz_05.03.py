@@ -1,13 +1,3 @@
-def zd_26(n: int) -> None:
-    n = int(input("Введите число n: "))
-
-    print(f"Максимальная цифра числа {n}: {max(str(n))}\nМинимальная цифра числа {n}: {min(str(n))}")
-def zd_27(n: int) -> None:
-    n = int(input("Введите число n: "))
-
-    print(f"Максимальная цифра числа {n}: {max(str(n))}\nМинимальная цифра числа {n}: {min(str(n))}")
-    print(f"Максимальное число превышает минимальное число на {int(max(str(n))) - int(min(str(n)))}")
-    print(f"Сумма максимальной и минимальной цифр числа: {int(max(str(n))) + int(min(str(n)))}")
 def zd_23(n: int, a: int, z: int, x: int, y: int) -> None:
     n = int(input("Введите число n: "))
     a = int(input("Введите число a: "))
@@ -19,6 +9,7 @@ def zd_23(n: int, a: int, z: int, x: int, y: int) -> None:
     print(f"Цифр в числе {n} кратных {z}: {len([i for i in str(n) if int(i) % z == 0])}")
     print(f"Сумма его больших {a}: {len([i for i in str(n) if int(i) > a])}")
     print(f"Цифры {x} и {y} встречаются {str(x).count(str(x)) and str(y).count(str(y))} раз")
+
 def zd_24(nambers: list, x: int) -> None:
     numbers = map(int, input("Введите последовательность чисел: ").split(" "))
     x = int(input("Введите число x: "))
@@ -27,11 +18,25 @@ def zd_24(nambers: list, x: int) -> None:
     print(f"Кол-во чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}")
     # numbers = map(int, input("Введите последовательность чисел: ").split(" "))
     # x = int(input("Введите число x: "))
+
     # print(f"Сумма всех чисел последовательности больше числа {x}: {sum([i for i in numbers if i > x])}")
     # print(f'Количество чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}')
     # print(f"Кол-во чётных чисел последовательности: {len([i for i in numbers if i % 2 == 0])}")
+
     #a = [1, 2, 3, 4, 5]
     #b = []
     #for x in a:
         #if x % 2 == 0:
             #b.append(x)
+
+def zd_26(n: int) -> None:
+    n = int(input("Введите число n: "))
+
+    print(f"Максимальная цифра числа {n}: {max(str(n))}\nМинимальная цифра числа {n}: {min(str(n))}")
+
+def zd_27(n: int) -> None:
+    n = int(input("Введите число n: "))
+
+    print(f"Максимальная цифра числа {n}: {max(str(n))}\nМинимальная цифра числа {n}: {min(str(n))}")
+    print(f"Максимальное число превышает минимальное число на {int(max(str(n))) - int(min(str(n)))}")
+    print(f"Сумма максимальной и минимальной цифр числа: {int(max(str(n))) + int(min(str(n)))}")
