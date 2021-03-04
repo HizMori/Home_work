@@ -1,11 +1,11 @@
-def zd_26():
+#zd_26
     n = int(input("Введите число n: "))
 
     maxi = max(str(n))
     mini = min(str(n))
     print(f"Максимальная цифра числа {n}: {maxi}\nМинимальная цифра числа {n}: {mini}")
 
-def zd_27():
+#zd_27
     n = int(input("Введите число n: "))
 
     maxi = max(str(n))
