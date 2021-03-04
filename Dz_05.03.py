@@ -29,8 +29,8 @@ m = 10
 
 maxi = max(str(n))
 mini = min(str(n))
-difference = int(max(str(n))) - int(min(str(n)))
-sum = int(max(str(n))) + int(min(str(n)))
+difference = int(maxi) - int(mini)
+sum = int(maxi) + int(mini)
 
 print(f"Максимальная цифра числа {n}: {maxi}\nМинимальная цифра числа {n}: {mini}")
 print(f"Максимальное число превышает минимальное число на {difference}")
