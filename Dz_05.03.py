@@ -32,6 +32,9 @@ def zd_26(n: int) -> None:
     n = int(input("Введите число n: "))
 
     print(f"Максимальная цифра числа {n}: {max(str(n))}\nМинимальная цифра числа {n}: {min(str(n))}")
+    m = max(str(n))
+    e = min(str(n))
+    print(f"Максимальная цифра числа {n}: {m}\nМинимальная цифра числа {n}: {e})
 
 def zd_27(n: int) -> None:
     n = int(input("Введите число n: "))
