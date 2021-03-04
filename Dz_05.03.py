@@ -1,16 +1,3 @@
-#zd_24
-numbers = list(map(int, input("Введите последовательность чисел: ").split()))
-x = int(input("Введите число x: "))
-
-for i in numbers
-    if i > x:
-        print(f"Сумма всех чисел последовательности больше числа {x}: {sum}")
-sum = sum([i for i in numbers if i > x])
-quantity = len([i for i in numbers if i % 2 == 0])
-
-print(f"Сумма всех чисел последовательности больше числа {x}: {sum}")
-print(f"Кол-во всех чётных чисел последовательности: {quantity}")
-
 #zd_26
 n = int(input("Введите число n: "))
 
