@@ -1,7 +1,7 @@
 #zd_26
 n = int(input("Введите число n: "))
 M = -1
-#m = 10
+#m = -1
 
 maxi = max(str(n))
 mini = min(str(n))
