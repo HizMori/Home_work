@@ -1,4 +1,4 @@
-# №1
+# №1.1
 import math
 
 n = int(input('Введите чилсо: '))
@@ -6,10 +6,19 @@ r = math.factorial(n)
 
 print(f'{n}! = {r}')
 
-# №2
-n = int(input('Введите число:'))
-s = int(input('Введите степень:'))
+# №1.2
+n = int(input('Введите чилсо: '))
+r = 1
 
-if s > 0:
-    for i in range(s):
-        n *= n
+while n > 0:
+    r *= n
+    n -= 1
+
+print(f'Факториал = {r}')
+
+# №2
+n = int(input('Введите число, возводимое в степень: '))
+s = int(input('Введите степень: '))
+
+n = pow(n, s)
+print(n)
