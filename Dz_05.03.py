@@ -1,20 +1,19 @@
 #zd_26
 n = int(input("Введите число n: "))
 M = -1
-#m = -1
 
 maxi = max(str(n))
 mini = min(str(n))
 print(f"Максимальная цифра числа {n}: {maxi}\nМинимальная цифра числа {n}: {mini}")
 
-While n > 0:
+while n > 0:
   p = n % 10
   if p > M:
     M = p
   n = n // 10
 print(f"Максимальная цифра в числе {n}: {M}")
 
-#While n > 0:
+#while n > 0:
   #p = n % 10
   #if p < m:
     #m = p
@@ -36,14 +35,14 @@ print(f"Максимальная цифра числа {n}: {maxi}\nМинима
 print(f"Максимальное число превышает минимальное число на {difference}")
 print(f"Сумма максимальной и минимальной цифр числа: {sum}")
 
-While n > 0:
+while n > 0:
   p = n % 10
   if p > M:
     M = p
   n = n // 10
 print(f"Максимальная цифра в числе {n}: {M}")
 
-#While n > 0:
+#while n > 0:
   #p = n % 10
   #if p < m:
     #m = p
