@@ -71,6 +71,23 @@ while q != w:
 
 print(f'НОД({q},{w}) = {q}')
 
+
+def NOD(a, b):
+    if a == 0 or b == 0:
+        return a+b
+    if a > b:
+        return NOD(a - b, b)
+    else:
+        return NOD(a, b - a)
+
+def NOD(a, b):
+  if b == 0: return a
+  return NOD(b, a % b)
+a = int(input())
+b = int(input())
+
+print(f'НОД({a},{b}) = {NOD(a, b)}')
+
 #Поиск простого числа
 count = 0
 k = 2
