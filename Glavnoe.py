@@ -90,3 +90,66 @@ def prostoe(x):
             return False
     return True
 print(prostoe(12)) #Лучше этот вариант
+
+#Перевод в другие системы исчисления
+n = 178
+k = 128
+while k > 0:
+    print(n // k, end = "")
+    n = n % k
+    k = k // 2
+
+def printBin(h):
+    k = 128
+    while k > 0:
+        print(h // k, end = "")
+        h = h % k
+        k = k // 2
+print(printBin(178))
+
+def printBin ( n ):
+    if n == 0: return
+    printBin(n // 2)
+    print(n % 2, end = "")
+
+
+#Сумма цифр чисел
+def sumDigits(e):
+    sum = 0
+    while e != 0:
+        sum += e % 10
+        e = e // 10
+    return sum
+print(sumDigits(123))
+
+def sumDigits(n):
+  if n < 10: return n
+  d = n % 10
+  sum = d + sumDigits(n // 10)
+  return sum
+print(sumDigits(567))
+
+#Проверка на чётность
+def even(z):
+  if z % 2 == 0:
+    return True
+  else:
+    return False
+print(even(12))
+
+#Фибиначи
+f1 = 1
+f2 = 1
+for i in range(3, 10):
+    f3 = f1 + f2
+    print(f3)
+    f1, f2, = f2, f3
+
+#Ханойские башни
+def Hanoi ( n, k, m ):
+    if n == 0: return
+    p = 6 - k - m
+    Hanoi(n-1, k, p)
+    print(k, "->", m)
+    Hanoi(n-1, p, m)
+Hanoi(2, 1, 3)
