@@ -45,3 +45,23 @@ else:
 
 print(m)
 '''
+#/////
+from random import  randint
+a, b = map(int, input('Введите границы диапазона: ').split())
+A = [randint(a, b) for i in range(10)]
+print(A)
+
+#////
+a, b = sorted(int(i) for i in input('Введите границы диапазона: ').split())
+A = [randint(a, b) for i in range(10)]
+
+print(A)
+
+#////
+a, b = sorted(int(i) for i in input('Введите границы диапазона: ').split())
+A = []
+
+for i in range(10):
+    A.append(randint(a, b) if i < 5
+             else pow(A[1 - 5], 2))
+print(A)
