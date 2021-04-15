@@ -6,7 +6,7 @@ print(f'Цело число: {int(13.23)}')
 print(f'Перевод в двоичную систему исчисления: {14:b}')
 print(f'Перевод восьмеричную систему исчисления: {14:o}')
 print(f'Перевод шестнадцатиричную систему исчисления: {14:x}')
-print(f'Создание массива: {[i for i in range(10)]} или {list(range(10))} или {[int(input()) for i in range(2)]}')
+print(f'Создание массива: {[i for i in range(10)]} или {list(range(10))} или {[int(input()) for i in range(2)]} или {list(map(int, input().split()))}')
 
 print(f'Для строк:')
 welcome = "Hello {:s}"
@@ -189,3 +189,13 @@ def Hanoi ( n, k, m ):
     print(k, "->", m)
     Hanoi(n-1, p, m)
 Hanoi(2, 1, 3)
+
+#Перебор элементов в мвссиве
+
+A =[1, 2, 3]
+n = 0
+for x in A:
+    if x < 10:
+        n += 1
+print(n)
+
