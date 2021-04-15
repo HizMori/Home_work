@@ -49,14 +49,17 @@ print(m)
 from random import  randint
 
 print('Введите границы диапазона:')
+
 a, b = map(int, input().split())
 A = [randint(a, b) for i in range(10)]
+
 print(*A)
 
 #////
 from random import  randint
 
 print('Введите границы диапазона:')
+
 a, b = sorted(int(i) for i in input().split())
 A = [randint(a, b) for i in range(10)]
 
@@ -66,24 +69,30 @@ print(*A)
 from random import  randint
 
 print('Введите границы диапазона:')
+
 a, b = sorted(int(i) for i in input().split())
 A = []
 
 for i in range(10):
     A.append(randint(a, b) if i < 5
              else pow(A[i - 5], 2))
+
 print(*A)
 
 #///
 print('Массив:')
+
 A = [int(i) for i in input().split()]
+
 print(f'Среднее арифметическое {sum(A)/len(A)}')
 
 #///
 from random import  randint
 
 print('Массив:')
+
 A = [randint(0, 101) for i in range(10)]
+
 for a in A:
   print (a, end = " ")
 
@@ -93,4 +102,22 @@ for i in A:
         A.remove(i)
     else:
         b = sum(A) / len(A)
+
 print(f'\nСр. арифм. элементов < 50: {a}\nСр. арифм. элементов >=50: {b}')
+
+#///
+print('Введите размер массива:')
+
+N = []
+
+def fibonaci():
+    f1 = 1
+    f2 = 1
+    n = int(input())
+    for i in range(n - 2):
+        f3 = f1 + f2
+        f1, f2, = f2, f3
+        N.append(f3)
+    print('Числа Фибоначчи:')
+    print(1, 1, *N)
+fibonaci()
