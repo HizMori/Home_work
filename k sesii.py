@@ -16,4 +16,6 @@ for i in range(n - 1):
     if i != mini:
         A[i], A[mini] = A[mini], A[i]
 
+A.pop(0)
+
 print(A)
