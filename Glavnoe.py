@@ -93,9 +93,15 @@ def NOD(a, b):
     else:
         return NOD(a, b - a)
 
+a = int(input('Первое число: '))
+b = int(input('Второе число: '))
+
+print(f'НОД({a},{b}) = {NOD(a, b)}')
+
 def NOD(a, b):
   if b == 0: return a
   return NOD(b, a % b)
+
 a = int(input('Первое число: '))
 b = int(input('Второе число: '))
 

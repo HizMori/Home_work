@@ -16,13 +16,14 @@ for i in range(n - 1):
     if i != mini:
         A[i], A[mini] = A[mini], A[i]
 
-A.pop(0)
+A.remove(0)
 
 print(*A)
 
 #9
 a = list(map(int, input().split()))
-n = -1
+a.pop(0)
+n = 0
 
 for i in range(len(a)):
     if a[-i] >= 0:
@@ -30,7 +31,6 @@ for i in range(len(a)):
     else:
         a.pop(-i)
 
-a.pop(0)
 a.insert(0, n)
 a.sort()
 
