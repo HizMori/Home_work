@@ -1,8 +1,8 @@
 #7
-A = [int(x) for x in input("Введите числа: ").split()]
+A = [int(x) for x in input().split()]
 
 A.sort()
-A.pop(0)
+A.remove(0)
 
 #или
 
@@ -18,4 +18,28 @@ for i in range(n - 1):
 
 A.pop(0)
 
-print(A)
+print(*A)
+
+#9
+a = list(map(int, input().split()))
+n = -1
+
+for i in range(len(a)):
+    if a[-i] >= 0:
+        n += 1
+    else:
+        a.pop(-i)
+
+a.pop(0)
+a.insert(0, n)
+a.sort()
+
+print(*a)
+
+#10
+def sumDigits(n):
+    if n < 10: return n
+    d = n % 10
+    sumi = d + sumDigits(n // 10)
+    return sumi
+print(sumDigits(int(input())))

@@ -148,18 +148,18 @@ def printBin ( n ):
 #Сумма цифр чисел
 
 def sumDigits(e):
-    sum = 0
+    sumi = 0
     while e != 0:
-        sum += e % 10
+        sumi += e % 10
         e = e // 10
-    return sum
+    return sumi
 print(sumDigits(123))
 
 def sumDigits(n):
-  if n < 10: return n
-  d = n % 10
-  sum = d + sumDigits(n // 10)
-  return sum
+    if n < 10: return n
+    d = n % 10
+    sumi = d + sumDigits(n // 10)
+    return sumi
 print(sumDigits(567))
 
 #Проверка на чётность
