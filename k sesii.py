@@ -22,18 +22,18 @@ print(*A)
 
 #9
 a = list(map(int, input().split()))
+n = a[0]
 a.pop(0)
-n = 0
 
-for i in range(len(a)):
+for i in range(n):
     if a[-i] >= 0:
-        n += 1
+        n += 0
     else:
         a.pop(-i)
+        n -= 1
 
-a.insert(0, n)
 a.sort()
-
+a.insert(0, n)
 print(*a)
 
 #10
