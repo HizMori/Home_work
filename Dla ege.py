@@ -1,3 +1,18 @@
+# №2
+
+'''
+Логическая функция F задаётся выражением:
+(¬x ∧ y ∧ z) ∨ (¬x ∧ ¬y ∧ z) ∨ (¬x ∧ ¬y ∧ ¬z).
+На рисунке приведён фрагмент таблицы истинности функции F, содержащий все наборы аргументов, при которых функция F истинна.
+Определите, какому столбцу таблицы истинности функции F соответствует каждая из переменных x, y, z.
+'''
+
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            if (not(x) and y and z) or (not(x) and not(y) and z) or (not(x) and not (y) and not(z))==1:
+                print(x, y, z)
+
 # №6
 
 '''
@@ -35,7 +50,7 @@ for i in range(1, 10000):
 
 A = [i for i in range(5883, 15906)
      if i % 9 == 0 or i % 23 == 0 and i % 13 != 0 and i % 18 != 0 and i % 19 != 0 and i % 22 != 0]
-print(len(A), max(A))
+print(len(A), max(A)) #лучше так
 
 k = 0
 m = -1
@@ -55,7 +70,7 @@ print(k, m)
 
 A = [i for i in range(2*10**5, 4*10**5+1)
      if i % 7 == 0 and i % 13 != 0 and i % 29 != 0 and i % 43 != 0 and i % 101 != 0]
-print(f"{len(A), min(A)}00000")
+print(f"{len(A), min(A)}00000") #лучше так
 
 k = 0
 m = 1000000
