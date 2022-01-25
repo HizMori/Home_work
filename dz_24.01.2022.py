@@ -57,3 +57,18 @@ def f(n):
         return 1 + 3 * f(n - 2)
 
 print(f(17))
+
+#22
+for i in range(1000):
+    x = i
+    q = 15
+    l = 0
+    while x >= q:
+        l += 1
+        x -= q
+    m = x
+    if m < l:
+        m = l
+        l = x
+    if l == 3 and m == 7:
+        print(i)
