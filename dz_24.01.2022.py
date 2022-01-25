@@ -98,3 +98,22 @@ for x in v((a, s)):
         if sum(y) >= 142:
             print(f'{(a, s)} -> {x} -> {y} - Победил Ваня')
             break
+
+#20
+
+v = lambda f: ((f[0]+2, f[1]), (f[0]*2, f[1]), (f[0], f[1]+2), (f[0], f[1]*2))
+
+a = 2
+s = 67
+for x in v((a, s)):
+    for y in v((x[0], x[1])):
+        for z in v((y[0], y[1])):
+            if sum(x) >= 142:
+                print(f'{(a, s)} -> {x} - Победил Петя')
+                break
+            if sum(y) >= 142:
+                print(f'{(a, s)} -> {x} -> {y} - Победил Ваня')
+                break
+            if sum(z) >= 142:
+                print(f'{(a, s)} -> {x} -> {y} -> {z} - Победил Петя')
+                break
