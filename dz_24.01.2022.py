@@ -43,6 +43,17 @@ print(d.count('4')-1)
 a = 18
 b = 81
 for i in range(1, 1000):
-    if i % a == 0 and i % b == 0 :
+    if i % a == 0 and i % b == 0:
         print(i)
         break
+
+#16
+def f(n):
+    if n == 1:
+        return 1
+    if n % 2 == 0:
+        return  n + 2 * f(n - 1)
+    if n % 2 != 0 and n > 1:
+        return 1 + 3 * f(n - 2)
+
+print(f(17))
