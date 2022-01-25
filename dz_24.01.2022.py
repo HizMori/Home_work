@@ -37,3 +37,12 @@ while a > 0:
     a = a // 5
 print(d)
 print(d.count('4')-1)
+
+#15
+
+a = 18
+b = 81
+for i in range(1, 1000):
+    if i % a == 0 and i % b == 0 :
+        print(i)
+        break
