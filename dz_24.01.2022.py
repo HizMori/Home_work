@@ -27,3 +27,13 @@ while '1111' in a or '2222' in a:
     if '2222' in a:
         a = a.replace('2222', '11', 1)
 print(a)
+
+#14
+a = 5**2019 - 5**2019 + 25**600 - 125
+print(a)
+d = ''
+while a > 0:
+    d += f'{a % 5}'
+    a = a // 5
+print(d)
+print(d.count('4')-1)
