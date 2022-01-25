@@ -72,3 +72,29 @@ for i in range(1000):
         l = x
     if l == 3 and m == 7:
         print(i)
+
+#23
+def f(x, y):
+    if x < y:
+        return 0
+    if x == y:
+        return 1
+    if x > y:
+        return f(x-1, y)+f(x//2, y)
+
+print(f(30, 10)*f(10, 1))
+
+#19
+
+v = lambda f: ((f[0]+2, f[1]), (f[0]*2, f[1]), (f[0], f[1]+2), (f[0], f[1]*2))
+
+a = 2
+s = 35
+for x in v((a, s)):
+    for y in v((x[0], x[1])):
+        if sum(x) >= 142:
+            print(f'{(a, s)} -> {x} - Победил Петя')
+            break
+        if sum(y) >= 142:
+            print(f'{(a, s)} -> {x} -> {y} - Победил Ваня')
+            break
