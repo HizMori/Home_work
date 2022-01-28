@@ -117,3 +117,18 @@ for x in v((a, s)):
             if sum(z) >= 142:
                 print(f'{(a, s)} -> {x} -> {y} -> {z} - Победил Петя')
                 break
+
+#25
+for i in range(850001, 850050):
+    deli = []
+    c = 0
+    for d in range(2, i//2 + 1):
+        if i % d == 0:
+            deli.append(d)
+            c += 1
+    if c == 0:
+        f = 0
+    else:
+        f = max(deli) - min(deli)
+    if f % 7 == 0 and f != 0:
+        print(i, f, deli)
