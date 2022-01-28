@@ -132,3 +132,16 @@ for i in range(850001, 850050):
         f = max(deli) - min(deli)
     if f % 7 == 0 and f != 0:
         print(i, f, deli)
+
+#17
+f = open('17var5.txt', 'r')
+file = f.read()
+mas = [int(x) for x in file.split()]
+c = 0
+maxi = 0
+for i in range(len(mas)-1):
+    if mas[i] % 10 == 5 and mas[i+1] % 10 == 5:
+        c += 1
+        if maxi < abs(mas[i] - mas[i+1]):
+            maxi = abs(mas[i] - mas[i+1])
+print(c, maxi)
