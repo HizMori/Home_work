@@ -807,3 +807,92 @@ while True:
     if s.count("J") > s.count("E"):
         k += 1
 print(k)
+
+# №25
+# 1
+'''
+Напишите программу, которая ищет среди целых чисел, принадлежащих числовому отрезку [190201; 190280], числа, имеющие ровно 4 различных ЧЁТНЫХ делителя.
+Выведите эти четыре делителя для каждого найденного числа в порядке убывания.
+'''
+
+for n in range(190201,190281):
+      divs = []
+      for d in range(1,n+1):
+        if n % d == 0 and d%2==0:
+          divs.append(d)
+          if len(divs) > 4: break
+      if len(divs) == 4:
+        divs.reverse()
+        print(*divs)
+
+# или
+
+for n in range(190201, 190280+1):
+    divs = [d for d in range(1, n+1) if n % d == 0 and d % 2 == 0]
+    if len(divs) == 4:
+        divs.reverse()
+        print(*divs)
+
+# 2
+'''
+Напишите программу, которая ищет среди целых чисел, принадлежащих числовому отрезку [394441; 394505], числа, имеющие максимальное количество различных делителей. 
+Если таких чисел несколько, то найдите минимальное из них.
+Выведите количество делителей найденного числа и два наибольших делителя в порядке убывания.
+'''
+
+maxim = 0
+divsMax = []
+for n in range(394441, 394505 + 1):
+  divs = []
+  for d in range(1,n+1):
+    if n % d == 0:
+      divs.append(d)
+  if len(divs) > maxim:
+    maxim = len(divs)
+    divsMax = divs
+divsMax.reverse()
+print(maxim,divsMax[0],divsMax[1])
+
+# или
+
+maxim=0
+divsmax=[]
+for n in range(394441, 394505+1):
+    divs = [d for d in range(1, n+1) if n % d == 0]
+    if len(divs) > maxim:
+        maxim = len(divs)
+        divsmax = divs
+divsmax.reverse()
+print(maxim, divsmax[0], divsmax[1])
+
+# 3
+'''
+Напишите программу, которая ищет среди целых чисел, принадлежащих числовому отрезку [3532000; 3532160], простые числа.
+Выведите все найденные простые числа в порядке убывания, слева от каждого числа выведите его номер по порядку.
+'''
+
+count = 0
+for n in range(3532160, 3532000-1, -1):
+  flag = True
+  for d in range(2, n):
+    if n % d == 0:
+      flag = False
+      break
+  if flag == True:
+    count+=1
+    print(count , n)
+
+# или
+
+count = 0
+for n in range(3532160, 3532000-1, -1):
+      flag = True
+      d = 2
+      while d*d <= n-1:
+            if n % d == 0:
+                  flag = False
+                  break
+            d+=1
+      if flag == True:
+            count+=1
+            print(count , n)
