@@ -365,11 +365,11 @@ for A in range(1, 50):
 истинно для любых целых положительных значений x и y.
 '''
 
-for A in range(-100,200):
+for A in range(-100, 200):
     OK = 1
-    for x in range(1,100):
-        for y in range(1,100):
-            OK *= (y+3*x<A) or (x > 20) or (y > 40)
+    for x in range(1, 100):
+        for y in range(1, 100):
+            OK *= (y+3*x < A) or (x > 20) or (y > 40)
     if OK:
         print(A)
 
@@ -385,8 +385,8 @@ x&77 ≠ 0 → (x&12 = 0 → x&А ≠ 0)
 for A in range(128):
     B = True
     for x in range(128):
-        if ((x&77==0) or (x&12!=0) or (x&A!=0))==0:
-            B=False
+        if ((x & 77 == 0) or (x & 12 != 0) or (x & A != 0)) == 0:
+            B = False
     if B:
         print(A)
         break
@@ -402,9 +402,9 @@ F(n) = 2 * F(n–1) + F(n-2), при n > 1
 
 def f(n):
     if n == 0:
-        return 1
+        return 0
     if n == 1:
-        return  1
+        return 1
     if n > 1:
         return 2*f(n-1)+f(n-2)
 print(f(6))
@@ -421,12 +421,12 @@ G(n) = F(n–1) - 2·G(n–1), при n >=2
 def F(n):
     if n == 1:
         return 1
-    elif (n >= 2):
+    elif n >= 2:
         return F(n - 1) + 3 * G(n - 1)
 def G(n):
     if n == 1:
         return 1
-    elif (n >= 2):
+    elif n >= 2:
         return F(n - 1) - 2 * G(n - 1)
 res = F(18)
 s = 0
@@ -587,14 +587,20 @@ print(len(L), min(L))
 '''
 
 def F(a,b,h):
-    if a+b>=77 and h==2: return True
-    if a+b>=77 and h<2: return False
-    if h>2: return False
-    h=h+1
-    if h%2==0: return F(a+1,b,h) or F(a*2,b,h) or F(a,b+1,h) or F(a,b*2,h)     #если ходит Ваня
-    if h%2!=0: return F(a+1,b,h) or F(a*2,b,h) or F(a,b+1,h) or F(a,b*2,h)#у Пети неудачный ход учитываем и поэтому пишем or
-for s in range (1,69+1):
-    if F(7,s,0): print (s)
+    if a+b >= 77 and h == 2:
+        return True
+    if a+b >= 77 and h < 2:
+        return False
+    if h > 2:
+        return False
+    h = h+1
+    if h % 2 == 0:
+        return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)     #если ходит Ваня
+    if h % 2 != 0:
+        return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)#у Пети неудачный ход учитываем и поэтому пишем or
+for s in range (1, 70):
+    if F(7, s, 0):
+        print(s)
 
 # №20
 '''
@@ -604,14 +610,20 @@ for s in range (1,69+1):
 '''
 
 def F(a,b,h):
-    if a+b>=77 and h==3: return True
-    if a+b>=77 and h<3: return False
-    if h>3: return False
-    h=h+1
-    if h%2!=0: return F(a+1,b,h) or F(a*2,b,h) or F(a,b+1,h) or F(a,b*2,h)     #если ходит Петя
-    if h%2==0: return F(a+1,b,h) and F(a*2,b,h) and F(a,b+1,h) and F(a,b*2,h) #если ходит Ваня и не должен выиграть
-for s in range (1,69+1):
-    if F(7,s,0): print (s)
+    if a+b >= 77 and h == 3:
+        return True
+    if a+b >= 77 and h < 3:
+        return False
+    if h > 3:
+        return False
+    h = h+1
+    if h % 2 != 0:
+        return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)     #если ходит Петя
+    if h % 2 == 0:
+        return F(a+1, b, h) and F(a*2, b, h) and F(a, b+1, h) and F(a, b*2, h) #если ходит Ваня и не должен выиграть
+for s in range (1, 70):
+    if F(7, s, 0):
+        print(s)
 
 # №21
 '''
@@ -620,15 +632,21 @@ for s in range (1,69+1):
 – у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.
 '''
 
-def F(a,b,h):
-    if a+b>=77 and (h==2 or h==4): return True
-    if a+b>=77 and (h==1 or h==3): return False
-    if h>4: return False
-    h=h+1
-    if h%2==0: return F(a+1,b,h) or F(a*2,b,h) or F(a,b+1,h) or F(a,b*2,h)
-    if h%2!=0: return  F(a+1,b,h) and F(a*2,b,h) and F(a,b+1,h) and F(a,b*2,h)
-for s in range (1,69+1):
-    if F(7,s,0): print (s)
+def F(a, b, h):
+    if a+b >= 77 and (h == 2 or h == 4):
+        return True
+    if a+b >= 77 and (h == 1 or h == 3):
+        return False
+    if h > 4:
+        return False
+    h = h+1
+    if h % 2 == 0:
+        return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)
+    if h % 2 != 0:
+        return F(a+1, b, h) and F(a*2, b, h) and F(a, b+1, h) and F(a, b*2, h)
+for s in range (1, 70):
+    if F(7, s, 0):
+        print(s)
 
 # №22
 # Решаем так же как и 6 задание
@@ -661,16 +679,16 @@ print(f(5, 35)*f(35, 250))
 Для выполнения этого задания следует написать программу.
 '''
 
-f=open('24.txt')
-s=f.readline()
-m=1
-k=1
-for i in range(1,len(s)):
-    if s[i]!=s[i-1]:
-        k+=1
-        m=max(k,m)
+f = open('24.txt')
+s = f.readline()
+m = 1
+k = 1
+for i in range(1, len(s)):
+    if s[i] != s[i-1]:
+        k += 1
+        m = max(k, m)
     else:
-        k=1
+        k = 1
 print(m)
 
 # 2
@@ -679,14 +697,14 @@ print(m)
 Найдите длину самой длинной подцепочки, состоящей из символов C.
 '''
 
-f=open('k7-0.txt')
+f = open('k7-0.txt')
 s = f.readline()
 m = 0
 l = 0
-for i in range(0,len(s)):
-    if s[i]=='C':
-        l+=1
-        m = max(l,m)
+for i in range(0, len(s)):
+    if s[i]== 'C':
+        l += 1
+        m = max(l, m)
     else:
         l = 0
 print(m)
@@ -701,10 +719,10 @@ f = open('k7a-1.txt')
 s = f.readline()
 m = 0
 l = 0
-for i in range(0,len(s)):
-    if s[i] in'ABC':
-        l+=1
-        m = max(l,m)
+for i in range(0, len(s)):
+    if s[i] in 'ABC':
+        l += 1
+        m = max(l, m)
     else:
         l = 0
 print(m)
@@ -763,8 +781,7 @@ c1 = 'BCD'
 c2 = 'BDE'
 c3 = 'BCE'
 for i in range(len(s) - 2):
-    if s[i] in c1 and s[i + 1] in c2 and s[i + 2] in c3 \
-            and s[i] != s[i + 1] and s[i + 1] != s[i + 2]:
+    if s[i] in c1 and s[i + 1] in c2 and s[i + 2] in c3 and s[i] != s[i + 1] and s[i + 1] != s[i + 2]:
         k += 1
 print(k)
 
@@ -797,17 +814,17 @@ print(symb, m)
 Определите длину наибольшей убывающей подпоследовательности.
 '''
 
-F= open("24.txt")
+F = open("24.txt")
 s = F.readline()
 k = 1
 maxim = 0
 for i in range(1, len(s)):
-      if s[i] < s[i - 1]:
-          k += 1
-          if k > maxim:
-              maxim = k
-      else:
-          k = 1
+    if s[i] < s[i - 1]:
+        k += 1
+        if k > maxim:
+            maxim = k
+    else:
+        k = 1
 print(maxim)
 
 # 9
@@ -821,7 +838,8 @@ f = open("24-s1.txt")
 k = 0
 while True:
     s = f.readline()
-    if not s: break
+    if not s:
+        break
     if s.count("J") > s.count("E"):
         k += 1
 print(k)
@@ -833,15 +851,16 @@ print(k)
 Выведите эти четыре делителя для каждого найденного числа в порядке убывания.
 '''
 
-for n in range(190201,190281):
-      divs = []
-      for d in range(1,n+1):
-        if n % d == 0 and d%2==0:
-          divs.append(d)
-          if len(divs) > 4: break
-      if len(divs) == 4:
-        divs.reverse()
-        print(*divs)
+for n in range(190201, 190281):
+    deli = []
+    for d in range(1,n+1):
+        if n % d == 0 and d % 2 == 0:
+            deli.append(d)
+            if len(deli) > 4:
+                break
+    if len(deli) == 4:
+        deli.reverse()
+        print(*deli)
 
 # или
 
@@ -859,23 +878,23 @@ for n in range(190201, 190280+1):
 '''
 
 maxim = 0
-divsMax = []
-for n in range(394441, 394505 + 1):
-  divs = []
-  for d in range(1,n+1):
-    if n % d == 0:
-      divs.append(d)
-  if len(divs) > maxim:
-    maxim = len(divs)
-    divsMax = divs
-divsMax.reverse()
-print(maxim,divsMax[0],divsMax[1])
+del_max = []
+for n in range(394441, 394506):
+    deli = []
+    for d in range(1, n+1):
+        if n % d == 0:
+            deli.append(d)
+    if len(deli) > maxim:
+        maxim = len(deli)
+        del_max = deli
+del_max.reverse()
+print(maxim, del_max[0], del_max[1])
 
 # или
 
-maxim=0
-divsmax=[]
-for n in range(394441, 394505+1):
+maxim = 0
+divsmax = []
+for n in range(394441, 394506):
     divs = [d for d in range(1, n+1) if n % d == 0]
     if len(divs) > maxim:
         maxim = len(divs)
@@ -891,26 +910,26 @@ print(maxim, divsmax[0], divsmax[1])
 
 count = 0
 for n in range(3532160, 3532000-1, -1):
-  flag = True
-  for d in range(2, n):
-    if n % d == 0:
-      flag = False
-      break
-  if flag == True:
-    count+=1
-    print(count , n)
+    flag = True
+    for d in range(2, n):
+        if n % d == 0:
+            flag = False
+            break
+    if flag == True:
+        count += 1
+        print(count, n)
 
 # или
 
 count = 0
 for n in range(3532160, 3532000-1, -1):
-      flag = True
-      d = 2
-      while d*d <= n-1:
-            if n % d == 0:
-                  flag = False
-                  break
-            d+=1
-      if flag == True:
-            count+=1
-            print(count , n)
+    flag = True
+    d = 2
+    while d*d <= n-1:
+        if n % d == 0:
+            flag = False
+            break
+        d += 1
+    if flag == True:
+        count += 1
+        print(count, n)
