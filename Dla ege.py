@@ -586,7 +586,7 @@ print(len(L), min(L))
 Укажите минимальное значение S, когда такая ситуация возможна.
 '''
 
-def F(a,b,h):
+def F(a, b, h):
     if a+b >= 77 and h == 2:
         return True
     if a+b >= 77 and h < 2:
@@ -609,7 +609,7 @@ for s in range (1, 70):
 − Петя может выиграть своим вторым ходом независимо от того, как будет ходить Ваня.
 '''
 
-def F(a,b,h):
+def F(a, b, h):
     if a+b >= 77 and h == 3:
         return True
     if a+b >= 77 and h < 3:
