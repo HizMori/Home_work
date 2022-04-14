@@ -598,7 +598,7 @@ def F(a, b, h):
         return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)     #если ходит Ваня
     if h % 2 != 0:
         return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)#у Пети неудачный ход учитываем и поэтому пишем or
-for s in range (1, 70):
+for s in range(1, 70):
     if F(7, s, 0):
         print(s)
 
@@ -621,7 +621,7 @@ def F(a, b, h):
         return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)     #если ходит Петя
     if h % 2 == 0:
         return F(a+1, b, h) and F(a*2, b, h) and F(a, b+1, h) and F(a, b*2, h) #если ходит Ваня и не должен выиграть
-for s in range (1, 70):
+for s in range(1, 70):
     if F(7, s, 0):
         print(s)
 
@@ -644,7 +644,7 @@ def F(a, b, h):
         return F(a+1, b, h) or F(a*2, b, h) or F(a, b+1, h) or F(a, b*2, h)
     if h % 2 != 0:
         return F(a+1, b, h) and F(a*2, b, h) and F(a, b+1, h) and F(a, b*2, h)
-for s in range (1, 70):
+for s in range(1, 70):
     if F(7, s, 0):
         print(s)
 
