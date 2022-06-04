@@ -844,6 +844,16 @@ while True:
         k += 1
 print(k)
 
+# 10
+
+'''
+Не могут стоять рядом 2 нуля.
+'''
+
+file = open('24 варианты 1-4.txt')
+f = file.readline()
+print(max(map(len, f.replace('00', '0 0').split())))
+
 # №25
 # 1
 '''
