@@ -702,7 +702,7 @@ s = f.readline()
 m = 0
 l = 0
 for i in range(0, len(s)):
-    if s[i]== 'C':
+    if s[i] == 'C':
         l += 1
         m = max(l, m)
     else:
@@ -740,8 +740,7 @@ Max = 0
 for c in s:
     if c in 'BCDF':
         k += 1
-        if k > Max:
-            Max = k
+        Max = max(k, Max)
     else:
         k = 0
 print(Max)
@@ -775,7 +774,6 @@ print(len(c) - 1)
 
 Fin = open("k7c-1.txt")
 s = Fin.readline()
-
 k = 0
 c1 = 'BCD'
 c2 = 'BDE'
@@ -835,12 +833,10 @@ print(maxim)
 '''
 
 f = open("24-s1.txt")
+s = f.readlines()
 k = 0
-while True:
-    s = f.readline()
-    if not s:
-        break
-    if s.count("J") > s.count("E"):
+for i in range(len(s)):
+    if s[i].count("J") > s[i].count("E"):
         k += 1
 print(k)
 
