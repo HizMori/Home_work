@@ -197,6 +197,23 @@ for s1 in str:
             n += 1
 print(n)
 
+'''
+Шифр состоит из 6 символов - A, B и C. A должна повторяться один раз.
+'''
+k = 0
+for i in range(729):
+    a = i
+    b = ''
+    while a > 0:
+        b += f'{a%3}'
+        a //= 3
+    c = b[::-1].replace('0', 'A').replace('1', 'B').replace('2', 'C')
+    if len(c) < 6:
+        c = (6 - len(c)) * 'A' + c
+    if c.count('A') == 1:
+        k += 1
+        print(c, i, k)
+
 # №12
 #1
 '''
