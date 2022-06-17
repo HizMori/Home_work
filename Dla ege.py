@@ -73,7 +73,6 @@ for n in range(1, 78):
         break
 
 # 3
-
 for i in range(10000, 100000):
     n = str(i)
     a = int(n[0]) + int(n[2]) + int(n[4])
@@ -83,7 +82,6 @@ for i in range(10000, 100000):
         break
 
 # 4
-
 for i in range(1, 37):
     n = str(bin(i)[2:])
     if n.count("1") > n.count("0"):
@@ -94,6 +92,20 @@ for i in range(1, 37):
     if n > 36:
         print(n)
         break
+
+# 5
+'''
+1. двоичная запись n
+2. 0 -> 01
+3. 1 -> 10
+минимальный результат r большк 63?
+'''
+
+for i in range(1, 100):
+    n = bin(i)[2:]
+    r = int(''.join('01' if x == '0' else '10' for x in n), 2)
+    if r > 63:
+        print(r)
 
 # №6
 # 1
