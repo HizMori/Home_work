@@ -925,6 +925,19 @@ f = open("24.txt")
 s = f.readline().replace('AB', '1').replace('AC', '1').replace('A', ' ').replace('B', ' ').replace('C', ' ')
 print(max(map(len, s.split())))
 
+# 12
+'''
+Определить максимальное количество идущих подряд символов, среди которых Z встречается не более одного раза.
+'''
+
+f = open('24 варианты 5-9.txt')
+s = f.readline().split('Z')
+k = m = 0
+for i in range(len(s) - 1):
+    k = len(s[i]) + len(s[i + 1]) + 1
+    m = max(m, k)
+print(m)
+
 # №25
 # 1
 '''
